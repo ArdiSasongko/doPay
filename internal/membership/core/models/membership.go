@@ -7,3 +7,16 @@ type RegisterInfo struct {
 	Username string
 	Password string
 }
+
+// LoginInfo
+type LoginInfo struct {
+	Username string
+	Password string
+}
+
+// LoginResponse
+type LoginResponse struct {
+	Success bool
+	UUID    string
+	Message string
+}

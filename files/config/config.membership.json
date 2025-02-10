@@ -1,13 +1,13 @@
 {
     "app": {
-      "address": "0.0.0.0:3002",
+      "address": "127.0.0.1:3000",
       "label": "wallet"
     },
     "http": {
       "timeout": "2s"
     },
     "redis": {
-      "address": "0.0.0.0:6379",
+      "address": "127.0.0.1:6379",
       "poolsize": 100
     },
     "database": {

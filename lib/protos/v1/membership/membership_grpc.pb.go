@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	MembershipService_GetUserInfo_FullMethodName  = "/fastcampus.payment.v1.MembershipService/GetUserInfo"
-	MembershipService_Register_FullMethodName     = "/fastcampus.payment.v1.MembershipService/Register"
-	MembershipService_SubmitLogin_FullMethodName  = "/fastcampus.payment.v1.MembershipService/SubmitLogin"
-	MembershipService_SubmitLogout_FullMethodName = "/fastcampus.payment.v1.MembershipService/SubmitLogout"
+	MembershipService_GetUserInfo_FullMethodName  = "/dopay.membership.v1.MembershipService/GetUserInfo"
+	MembershipService_Register_FullMethodName     = "/dopay.membership.v1.MembershipService/Register"
+	MembershipService_SubmitLogin_FullMethodName  = "/dopay.membership.v1.MembershipService/SubmitLogin"
+	MembershipService_SubmitLogout_FullMethodName = "/dopay.membership.v1.MembershipService/SubmitLogout"
 )
 
 // MembershipServiceClient is the client API for MembershipService service.
@@ -218,7 +218,7 @@ func _MembershipService_SubmitLogout_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var MembershipService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "fastcampus.payment.v1.MembershipService",
+	ServiceName: "dopay.membership.v1.MembershipService",
 	HandlerType: (*MembershipServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

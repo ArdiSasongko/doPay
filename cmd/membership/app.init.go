@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"log"
 
 	"github.com/ArdiSasongko/doPay/internal/membership/adapter/handler"
@@ -29,6 +30,11 @@ func InitRedis(cfg *config.Config) *redis.Client {
 		Addr:     cfg.Redis.Address,
 		PoolSize: cfg.Redis.PoolSize,
 	})
+	ping, err := client.Ping(context.Background()).Result()
+	if err != nil {
+		log.Fatalf("failed ping redis :%s", err)
+	}
+	log.Print("ping ", ping)
 	return client
 }
 

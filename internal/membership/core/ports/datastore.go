@@ -1,6 +1,10 @@
 package ports
 
-import "context"
+import (
+	"context"
+
+	"github.com/ArdiSasongko/doPay/internal/membership/core/models"
+)
 
 type DatastoreRepositoryAdapter interface {
 	// redis
@@ -9,6 +13,6 @@ type DatastoreRepositoryAdapter interface {
 
 	// postgres
 	InsertUserInfoIntoDB(context.Context)
-	GetUserInfoFromDB(context.Context)
+	GetUserInfoFromDB(context.Context, string) (models.UserProfileInfo, error)
 	GetUserByUsername(context.Context)
 }
