@@ -2,12 +2,12 @@ package ports
 
 import "context"
 
-type CacheRepositoryAdapter interface {
+type DatastoreRepositoryAdapter interface {
+	// redis
 	GetUserSessionFromCache(context.Context)
 	UpdateUserSessionIntoCache(context.Context)
-}
 
-type DatabaseRepositoryAdapter interface {
+	// postgres
 	InsertUserInfoIntoDB(context.Context)
 	GetUserInfoFromDB(context.Context)
 	GetUserByUsername(context.Context)

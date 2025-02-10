@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/ArdiSasongko/doPay/lib/config"
-	pbHandler "github.com/ArdiSasongko/doPay/lib/protos/v1/payment"
+	pbHandler "github.com/ArdiSasongko/doPay/lib/protos/v1/membership"
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/middleware/logging"
@@ -38,7 +38,7 @@ func startService(cfg *config.Config) {
 		httpOpts...,
 	)
 
-	pbHandler.RegisterPaymentServiceHTTPServer(httpServer, handler)
+	pbHandler.RegisterMembershipServiceHTTPServer(httpServer, handler)
 
 	server := kratos.New(
 		kratos.Name(cfg.App.Label),

@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 
+	"github.com/ArdiSasongko/doPay/lib/config"
 	"github.com/go-kratos/kratos/contrib/log/zerolog/v2"
 	"github.com/go-kratos/kratos/v2/log"
 	zlog "github.com/rs/zerolog"
@@ -15,7 +16,7 @@ func main() {
 
 	log.Info("Starting backend service")
 
-	cfg, err := initConfig("config.membership")
+	cfg, err := config.InitConfig("config.membership")
 	if err != nil {
 		log.Fatalf("failed to parse config, %#v", err)
 	}

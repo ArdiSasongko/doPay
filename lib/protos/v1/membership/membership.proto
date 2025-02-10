@@ -1,0 +1,144 @@
+syntax = "proto3";
+package fastcampus.payment.v1;
+option go_package = "github.com/ArdiSasongko/doPay/lib/protos/v1/membership;membership";
+
+import "lib/protos/google/api/annotations.proto";
+import "lib/protos/protoc-gen-openapiv2/options/annotations.proto";
+
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+  info: {
+    title: "doPay (Membership API Endpoint)";
+    version: "1.0";
+    contact: {
+      name: "doPay";
+      url: "https://github.com/ArdiSasongko/doPay";
+      email: "ardisasongko002@gmail.com";
+    };
+  };
+
+  schemes: HTTP;
+  consumes: "application/json";
+  produces: "application/json";
+};
+
+service MembershipService {
+    // UserInfo
+    rpc GetUserInfo(UserInfoPayload) returns (UserInfoResponse) {
+        option (google.api.http) = {
+            get: "/v1/membership/info",
+        };
+        option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+            summary: "Get User Info";
+            operation_id: "GetUserInfo";
+            tags: "membership";
+            responses: {
+                key: "200"
+                value: {
+                    description: "OK";
+                }
+            };
+        };
+    }
+
+    // Register
+    rpc Register(RegisterRequest) returns (RegisterResponse) {
+        option (google.api.http) = {
+            post: "/v1/membership/register",
+            body: "*"
+        };
+        option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+            summary: "Register";
+            operation_id: "Register";
+            tags: "membership";
+            responses: {
+                key: "200"
+                value: {
+                    description: "OK";
+                }
+            };
+        };
+    }
+
+    // login
+    rpc SubmitLogin(LoginRequest) returns (LoginResponse) {
+        option (google.api.http) = {
+            post: "/v1/membership/login",
+            body: "*"
+        };
+        option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+            summary: "Submit Login";
+            operation_id: "SubmitLogin";
+            tags: "membership";
+            responses: {
+                key: "200"
+                value: {
+                    description: "OK";
+                }
+            };
+        };
+    }
+
+    // logout
+    rpc SubmitLogout(LogoutRequest) returns (LogoutResponse) {
+        option (google.api.http) = {
+            post: "/v1/membership/logout",
+            body: "*"
+        };
+        option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+            summary: "Submit Logout";
+            operation_id: "SubmitLogout";
+            tags: "membership";
+            responses: {
+                key: "200"
+                value: {
+                    description: "OK";
+                }
+            };
+        };
+    }
+}
+
+message UserInfoPayload {
+    string account_number = 1;
+}
+
+message UserInfoResponse {
+    string email = 1;
+    string fullname = 2;
+    string account_number = 3;
+    string status = 4;
+}
+
+message RegisterRequest {
+    string email = 1;
+    string fullname = 2;
+    string username = 3;
+    string password = 4;
+    string confirm_password = 5;
+}
+
+message RegisterResponse {
+    string account_number = 1;
+    bool success = 2;
+    string register_message = 3;
+}
+
+
+message LoginRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message LoginResponse {
+    bool success = 1;
+    string login_message = 2;
+    string uuid = 3;
+}
+
+message LogoutRequest {
+    string uuid = 1;
+}
+
+message LogoutResponse {
+    string message = 1;
+}

@@ -6,7 +6,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-func initConfig(configName string) (*Config, error) {
+func InitConfig(configName string) (*Config, error) {
 	cfg := &Config{}
 	viper.SetConfigType("json")
 	viper.AddConfigPath(".")

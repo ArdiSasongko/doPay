@@ -1,10 +1,11 @@
 module github.com/ArdiSasongko/doPay
 
-go 1.23.2
+go 1.23.5
 
 require (
 	github.com/go-kratos/kratos/contrib/log/zerolog/v2 v2.0.0-20240615052815-46362d1a360d
 	github.com/go-kratos/kratos/v2 v2.7.3
+	github.com/go-redis/redis/v8 v8.11.5
 	github.com/gorilla/handlers v1.5.2
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.20.0
 	github.com/rs/zerolog v1.33.0
@@ -15,6 +16,8 @@ require (
 )
 
 require (
+	github.com/cespare/xxhash/v2 v2.2.0 // indirect
+	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/go-kratos/aegis v0.2.0 // indirect
@@ -22,6 +25,7 @@ require (
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/gorilla/mux v1.8.1 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
+	github.com/jmoiron/sqlx v1.4.0 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.19 // indirect
