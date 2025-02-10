@@ -5,6 +5,7 @@ import (
 
 	"github.com/ArdiSasongko/doPay/lib/config"
 	"github.com/jmoiron/sqlx"
+	_ "github.com/lib/pq"
 )
 
 type Database struct {

@@ -19,10 +19,10 @@ var _ = binding.EncodeURL
 
 const _ = http.SupportPackageIsVersion1
 
-const OperationMembershipServiceGetUserInfo = "/fastcampus.payment.v1.MembershipService/GetUserInfo"
-const OperationMembershipServiceRegister = "/fastcampus.payment.v1.MembershipService/Register"
-const OperationMembershipServiceSubmitLogin = "/fastcampus.payment.v1.MembershipService/SubmitLogin"
-const OperationMembershipServiceSubmitLogout = "/fastcampus.payment.v1.MembershipService/SubmitLogout"
+const OperationMembershipServiceGetUserInfo = "/dopay.membership.v1.MembershipService/GetUserInfo"
+const OperationMembershipServiceRegister = "/dopay.membership.v1.MembershipService/Register"
+const OperationMembershipServiceSubmitLogin = "/dopay.membership.v1.MembershipService/SubmitLogin"
+const OperationMembershipServiceSubmitLogout = "/dopay.membership.v1.MembershipService/SubmitLogout"
 
 type MembershipServiceHTTPServer interface {
 	// GetUserInfo UserInfo
